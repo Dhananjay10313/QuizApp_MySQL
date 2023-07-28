@@ -1,0 +1,346 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer base {
+  .admin-class {
+    @apply grid;
+    @apply grid-cols-2;
+    @apply grid-rows-[1fr_5%_1fr];
+    @apply m-4;
+    @apply bg-rose-50;
+    @apply h-[85vh];
+    @apply overflow-y-scroll;
+    /* @apply shadow-xl; */
+    @apply rounded-md;
+    @apply p-4;
+    @apply gap-2;
+  }
+  .admin-class-class {
+    @apply row-span-full;
+    @apply border-rose-500;
+    @apply border-2;
+    @apply rounded-md;
+    @apply grid;
+    @apply grid-rows-[repeat(3,5%)_1fr];
+  }
+  .admin-class-class-btns {
+    @apply absolute;
+    @apply ml-[34.8vw];
+    @apply h-[4vh];
+  }
+  .admin-class-class-btns,
+  .admin-class-class-search,
+  .admin-class-class-headers {
+    @apply bg-rose-500;
+    @apply text-rose-50;
+  }
+  .admin-class-class-title {
+    @apply text-rose-500;
+    @apply w-full;
+    @apply text-center;
+    @apply tracking-widest;
+    @apply font-semibold;
+    @apply uppercase;
+  }
+  .admin-class-class-list-single,
+  .admin-class-class-headers {
+    @apply grid;
+    @apply text-xs;
+    @apply grid-cols-[10%_20%_8%_15%_8%_10%_1fr];
+    @apply break-words;
+    @apply px-2;
+    @apply text-center;
+    @apply justify-center;
+    @apply items-center;
+  }
+  .admin-class-class-list-single:nth-of-type(even) {
+    @apply bg-rose-100;
+  }
+  .admin-class-class-list-single.isSelected {
+    @apply bg-pink-300;
+  }
+  .admin-class-class-list {
+    @apply h-full;
+    @apply overflow-y-scroll;
+  }
+  .admin-class-enrolled,
+  .admin-class-notIn {
+    @apply h-full;
+    @apply border-2;
+    @apply rounded-md;
+    @apply grid;
+    @apply grid-rows-[repeat(3,10%)_1fr];
+    @apply border-violet-500;
+    @apply bg-violet-50;
+  }
+  .admin-class-enrolled-headers,
+  .admin-class-enrolled-list-single,
+  .admin-class-notIn-headers,
+  .admin-class-notIn-list-single {
+    @apply grid;
+    @apply text-sm;
+    @apply grid-cols-[10%_repeat(3,1fr)];
+    @apply break-words;
+    @apply items-center;
+    @apply justify-center;
+    @apply text-center;
+    @apply px-2;
+  }
+  .admin-class-enrolled-title,
+  .admin-class-notIn-title {
+    @apply text-sm;
+    @apply text-center;
+    @apply font-semibold;
+    @apply tracking-widest;
+    @apply text-violet-500;
+  }
+  .admin-class-enrolled-headers,
+  .admin-class-enrolled-search,
+  .admin-class-notIn-headers,
+  .admin-class-notIn-search {
+    @apply w-full;
+    @apply bg-violet-500;
+    @apply text-violet-50;
+  }
+  .admin-class-class-search,
+  .admin-class-enrolled-search,
+  .admin-class-notIn-search {
+    @apply w-full;
+    @apply grid;
+    @apply grid-cols-[1fr_3%];
+  }
+  .admin-class-class-search > input,
+  .admin-class-enrolled-search > input,
+  .admin-class-notIn-search > input {
+    @apply text-rose-500;
+    @apply pl-2;
+    @apply text-sm;
+    @apply font-mono;
+  }
+  .admin-class-enrolled-search > input,
+  .admin-class-notIn-search > input {
+    @apply text-violet-500;
+  }
+  .admin-class-enrolled-list-single:nth-of-type(even),
+  .admin-class-notIn-list-single:nth-of-type(even) {
+    @apply bg-violet-100;
+  }
+  .admin-class-enrolled-list-single.isSelected,
+  .admin-class-notIn-list-single.isSelected {
+    @apply bg-violet-300;
+  }
+  .admin-class-enrolled-list,
+  .admin-class-notIn-list {
+    @apply h-full;
+    @apply overflow-y-scroll;
+    @apply h-[20vh];
+  }
+  .admin-class-btn {
+    @apply w-full;
+    @apply items-center;
+    @apply justify-center;
+    @apply grid;
+    @apply grid-cols-2;
+    @apply text-center;
+    @apply px-[10vw];
+    @apply gap-8;
+  }
+  .admin-class-add,
+  .admin-class-remove {
+    @apply text-center;
+    @apply flex;
+    @apply items-center;
+    @apply justify-center;
+  }
+  .admin-class-add-modal {
+    /* @apply opacity-0; */
+    @apply absolute;
+    @apply overflow-hidden;
+    @apply z-30;
+    @apply duration-700;
+    @apply bg-purple-50;
+    @apply grid;
+    @apply grid-cols-[40%_1fr];
+    @apply grid-rows-[1fr_20%];
+    @apply break-words;
+    @apply gap-4;
+    @apply overflow-scroll;
+    @apply h-[60vh];
+    @apply items-center;
+    @apply justify-center;
+    @apply border-purple-800;
+    @apply border-2;
+    @apply rounded-md;
+    @apply w-[70vw];
+    @apply ml-[3vw];
+    @apply mt-[8vh];
+    @apply shadow-xl;
+    @apply text-xs;
+    @apply p-4;
+  }
+  .admin-class-add-subject,
+  .admin-class-add-lecturer,
+  .admin-class-add-btn {
+    @apply h-full;
+  }
+  .admin-class-add-className {
+    @apply grid;
+    @apply col-span-full;
+    @apply grid-cols-4;
+    @apply gap-8;
+  }
+  .admin-class-add-className button {
+    @apply bg-purple-500;
+    @apply text-purple-50;
+    @apply rounded-md;
+  }
+  .admin-class-add-modal .isSelected {
+    @apply bg-purple-100;
+  }
+  .admin-class-add-subject-headers,
+  .admin-class-add-subject-list-single {
+    @apply grid;
+    @apply grid-cols-[repeat(2,18%)_1fr];
+    @apply break-words;
+    @apply items-center;
+    @apply justify-center;
+  }
+  .admin-class-add-subject,
+  .admin-class-add-lecturer {
+    @apply w-full;
+    @apply h-[40vh];
+  }
+  .admin-class-add-subject-list,
+  .admin-class-add-lecturer-list {
+    @apply overflow-y-scroll;
+    @apply h-[30vh];
+  }
+  .admin-class-add-lecturer-list-single,
+  .admin-class-add-lecturer-headers {
+    @apply grid;
+    @apply grid-cols-[12%_30%_20%_1fr];
+    @apply break-words;
+    @apply text-center;
+    @apply justify-center;
+    @apply items-center;
+  }
+  .admin-class-add-lecturer-search,
+  .admin-class-add-subject-search {
+    @apply w-full;
+    @apply grid;
+    @apply grid-cols-[1fr_3%];
+  }
+  .admin-class-add-lecturer-title,
+  .admin-class-add-subject-title {
+    @apply text-center;
+  }
+  .admin-class-add-modal.isHidden {
+    @apply opacity-0;
+    @apply scale-0;
+    @apply -z-30;
+  }
+
+  .open_email_support {
+    @apply w-[10vh];
+    @apply h-[10vh];
+    @apply z-20;
+    @apply bg-blue-500;
+    @apply text-4xl;
+    @apply flex;
+    @apply items-center;
+    @apply justify-center;
+    @apply rounded-full;
+    @apply absolute;
+    @apply mt-[88vh];
+    @apply ml-[95vw];
+  }
+  .email_sp_modal {
+    @apply absolute;
+    @apply bg-blue-500;
+    @apply mt-[22vw];
+    @apply ml-[80vw];
+    @apply rounded-xl;
+    @apply p-4;
+    @apply shadow-xl;
+  }
+  .email_sp_modal input,
+  .email_sp_modal textarea {
+    @apply text-blue-900;
+  }
+  .email_sp_modal .btns {
+    @apply grid;
+    @apply grid-cols-2;
+  }
+  .email_sp_modal .btns > * {
+    @apply cursor-pointer;
+    @apply text-white;
+  }
+  .admin-manage-subject-btns{
+    @apply absolute;
+  }
+  .admin-manage-subject-title{
+    @apply text-center;
+    @apply text-2xl;
+    @apply font-semibold;
+    @apply tracking-widest;
+    @apply text-rose-700;
+    @apply flex;
+    @apply items-center;
+    @apply justify-center;
+
+  }
+  .admin-manage-subject-search{
+    @apply w-full;
+    @apply grid;
+    @apply grid-cols-[1fr_5%];
+  }
+  .admin-manage-subject-search-btn{
+    @apply text-3xl;
+    @apply flex;
+    @apply items-center;
+    @apply justify-center;
+  }
+  .admin-manage-subject-search,.admin-manage-subject-headers{
+
+  }
+  .admin-manage-subject{
+    @apply m-4;
+    @apply bg-rose-50;
+    @apply rounded-md;
+    @apply grid;
+    @apply grid-rows-[repeat(3,10%)_1fr];
+    @apply h-[85vh];
+  }
+  .admin-manage-subject-headers,.admin-manage-subject-search{
+    @apply bg-rose-700;
+    @apply text-rose-50;
+    @apply text-lg;
+  }
+  .admin-manage-subject .isSelected{
+    @apply bg-rose-300;
+  }
+  .admin-manage-subject-btns{
+    @apply bg-rose-700;
+    @apply ml-[70.8vw];
+    @apply h-[8.6vh];
+    @apply flex;
+    @apply w-[10vw];
+    @apply text-3xl;
+    @apply text-rose-50;
+    @apply grid;
+    @apply grid-cols-3;
+    @apply justify-center;
+    @apply items-center;
+    @apply rounded-tr-md;
+
+  }
+  .admin-manage-subject-headers,
+  .admin-manage-subject-single{
+    @apply grid;
+    @apply grid-cols-4;
+    @apply items-center;
+    @apply justify-center;
+    @apply text-center;
+    @apply break-words;
+  }
+}

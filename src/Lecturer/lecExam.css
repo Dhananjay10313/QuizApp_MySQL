@@ -1,0 +1,487 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer base {
+  html {
+    @apply w-screen;
+    @apply overflow-x-hidden;
+  }
+  .exam-content {
+    @apply bg-transparent;
+    @apply h-full;
+    @apply w-screen;
+  }
+  .manage-exam {
+    @apply grid;
+    @apply grid-cols-2;
+    @apply grid-rows-[auto];
+    @apply p-6;
+    @apply pl-7;
+    @apply gap-4;
+    @apply overflow-hidden;
+    @apply h-[90vh];
+    @apply opacity-100;
+    @apply w-[82.8vw];
+  }
+  .lec-content {
+    @apply w-[80.5vw];
+    @apply h-screen;
+    @apply pt-10;
+    @apply ml-[13.3rem];
+  }
+  .exam-assign-list {
+    @apply col-start-1;
+    @apply row-start-3;
+    @apply overflow-scroll;
+    @apply h-[68vh];
+    @apply text-center;
+  }
+  .manage-exam > h1 {
+    @apply col-start-1;
+    @apply row-start-2;
+    @apply text-center;
+    @apply tracking-widest;
+    @apply font-bold;
+    @apply text-pink-600;
+  }
+  .exam-assign-item,
+  .headings {
+    @apply grid-cols-[20%_1fr_20%];
+    @apply grid;
+  }
+  .manage-exam > h1:nth-of-type(2) {
+    @apply col-start-2;
+    @apply row-start-2;
+  }
+  .exam-assign-btns {
+    @apply grid-cols-[15%_1fr_15%];
+    @apply grid;
+    @apply gap-2;
+    @apply text-indigo-50;
+    @apply justify-start;
+    @apply text-center;
+    @apply items-center;
+  }
+  .exam-assign-btns > * {
+    @apply bg-pink-600;
+    @apply rounded-2xl;
+    @apply text-center;
+    @apply h-full;
+  }
+  .exam-assign-btns > div {
+    @apply pt-0.5;
+  }
+  .exam-assign-btns .search button {
+    @apply flex;
+    @apply items-center;
+    @apply justify-center;
+    @apply h-full;
+    @apply pl-1;
+    @apply text-white;
+    @apply font-bold;
+    @apply text-xl;
+  }
+  .exam-assign-btns input {
+    @apply w-[23.08vw];
+    @apply p-1;
+    @apply rounded-2xl;
+    @apply float-left;
+  }
+  .lec-exam-assign-new-modal.isHidden {
+    @apply opacity-0;
+    @apply -z-30;
+    @apply scale-0;
+  }
+  .created-exam,
+  .created-exam-list > .headings {
+    @apply text-center;
+    @apply w-full;
+    @apply grid;
+    @apply text-sm;
+    @apply grid-cols-[20%_1fr_20%_20%];
+  }
+  .created-exam > * {
+    @apply h-full;
+    @apply flex;
+    @apply items-center;
+    @apply justify-center;
+  }
+  .created-exam > h2 {
+    @apply col-start-2;
+  }
+  .created-exam-list {
+    @apply row-start-3;
+    @apply grid-rows-[auto];
+    @apply h-[30vh];
+    @apply overflow-y-scroll;
+    @apply shadow-xl;
+    @apply bg-pink-50;
+    @apply border-4;
+    @apply border-purple-200;
+    @apply rounded-md;
+  }
+  .exam-assign-list {
+    @apply bg-pink-50;
+    @apply border-4;
+    @apply border-purple-200;
+    @apply rounded-md;
+    @apply shadow-md;
+  }
+  .manage-exam .headings {
+    @apply font-bold;
+    @apply tracking-wider;
+    @apply text-indigo-800;
+    @apply bg-purple-200;
+  }
+  .manage-exam > h1 {
+    @apply text-xl;
+  }
+  .manage-exam .info-card {
+    @apply ml-[40.5vw];
+    @apply mt-[50vh];
+    @apply grid;
+    @apply grid-cols-[20%_1fr];
+    @apply grid-rows-4;
+    @apply w-[38vw];
+    @apply h-[35.5vh];
+    @apply bg-red-50;
+    @apply rounded-xl;
+    @apply border-red-100;
+    @apply border-4;
+    @apply gap-4;
+    @apply items-center;
+    @apply p-2;
+  }
+  .manage-exam .info-card .Ico {
+    @apply row-span-2;
+    @apply row-start-1;
+    @apply text-8xl;
+    @apply -rotate-12;
+    @apply text-yellow-400;
+  }
+  .manage-exam .info-card h1 {
+    @apply text-3xl;
+    @apply tracking-widest;
+    @apply font-bold;
+    @apply text-yellow-500;
+  }
+  .manage-exam .info-card h1 span {
+    @apply italic;
+    @apply text-orange-400;
+  }
+  .manage-exam .info-card h3 {
+    @apply mt-4;
+  }
+  .manage-exam .info-card h3,
+  h4 {
+    @apply col-span-2;
+  }
+  .manage-exam .info-card > h2,
+  .manage-exam .info-card > h3,
+  .manage-exam .info-card > h4 {
+    @apply text-gray-600;
+  }
+  .created-exam,
+  .exam-assign-item {
+    @apply my-2;
+    @apply transition-all;
+    @apply duration-500;
+    @apply cursor-pointer;
+  }
+  .exam-assign-item:hover,
+  .created-exam:hover {
+    @apply bg-indigo-200;
+    @apply text-indigo-500;
+  }
+
+  .exam-assign-item.isSelected,
+  .created-exam.isSelected {
+    @apply bg-indigo-200;
+  }
+  .lec-exam-assign-new-modal {
+    @apply absolute;
+    @apply z-50;
+    @apply mb-[30vh];
+    @apply bg-gradient-to-br;
+    @apply from-purple-800;
+    @apply to-pink-500;
+    @apply text-pink-100;
+    @apply rounded-3xl;
+    @apply ml-[20vw];
+    @apply grid-cols-2;
+    @apply grid;
+    @apply w-[30vw];
+    @apply h-[40vh];
+    @apply shadow-2xl;
+    @apply mt-[25vh];
+    @apply p-4;
+    @apply items-center;
+    @apply justify-center;
+    @apply text-center;
+  }
+  .lec-exam-assign-new-modal > .class-list,
+  .lec-exam-assign-new-modal > .exam-list {
+    @apply overflow-y-scroll;
+  }
+  .lec-exam-assign-new-modal > .heading {
+    @apply col-span-2;
+    @apply grid;
+    @apply grid-cols-2;
+    @apply justify-start;
+    @apply text-white;
+    @apply font-bold;
+    @apply tracking-widest;
+    @apply border-b-2;
+  }
+  .lec-exam-assign-new-modal > .assign-new-btn {
+    @apply col-span-2;
+    @apply w-full;
+    @apply bg-white;
+    @apply rounded-xl;
+    @apply cursor-pointer;
+  }
+  .assign-new-btn > h1 {
+    @apply bg-gradient-to-br;
+    @apply from-purple-800;
+    @apply to-pink-500;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .lec-exam-assign-new-modal .isSelected.class,
+  .lec-exam-assign-new-modal .isSelected.exam {
+    @apply duration-700;
+    @apply transition-all;
+    @apply rounded-3xl;
+    @apply bg-pink-50;
+    @apply text-pink-400;
+    @apply font-bold;
+  }
+
+  .lec-exam-assign-new-modal .class:hover,
+  .lec-exam-assign-new-modal .exam:hover {
+    @apply duration-700;
+    @apply transition-all;
+    @apply rounded-3xl;
+    @apply bg-pink-200;
+    @apply text-pink-400;
+    @apply cursor-pointer;
+  }
+  .lec-add-new-exam-modal {
+    @apply duration-700;
+    @apply opacity-100;
+    @apply bg-indigo-500;
+    @apply absolute;
+    @apply z-30;
+    @apply w-[50vw];
+    @apply h-[54vh];
+    @apply ml-[14vw];
+    @apply mt-[13vh];
+    @apply rounded-3xl;
+    @apply shadow-2xl;
+    @apply border-2;
+    @apply grid;
+    @apply grid-cols-[30%_1fr];
+    @apply grid-rows-[10%_5%_10%_1fr_10%];
+    @apply justify-center;
+    @apply gap-4;
+    @apply p-4;
+  }
+  .lec-add-new-exam-modal .close-btn {
+    @apply absolute;
+    @apply ml-[45vw];
+    @apply mt-[3vh];
+  }
+  .lec-add-new-exam-modal > h1:first-of-type {
+    @apply col-span-full;
+    @apply row-start-1;
+    @apply text-center;
+    @apply tracking-widest;
+    @apply text-lg;
+    @apply text-violet-50;
+    @apply font-semibold;
+  }
+  .lec-add-new-exam-modal > h2 {
+    @apply col-start-1;
+    @apply mt-3;
+    @apply row-start-2;
+    @apply text-center;
+    @apply self-center;
+    @apply text-indigo-100;
+  }
+  .lec-add-new-exam-modal > h3 {
+    @apply text-center;
+    @apply text-indigo-100;
+  }
+  .lec-add-new-exam-modal > input {
+    @apply col-start-1;
+    @apply row-start-3;
+    @apply border-b-2;
+    @apply bg-transparent;
+    @apply self-center;
+    @apply mt-4;
+    @apply border-indigo-100;
+    @apply text-yellow-100;
+    @apply mx-2;
+  }
+  .lec-add-new-exam-modal > h2:last-of-type {
+    @apply col-start-1;
+    @apply row-start-4;
+    @apply self-center;
+    @apply text-center;
+  }
+  .add-subjects {
+    @apply overflow-y-scroll;
+    @apply h-[26vh];
+    @apply col-start-2;
+    @apply row-start-3;
+    @apply row-span-2;
+  }
+  .add-btn-confirm {
+    @apply col-span-full;
+    @apply text-center;
+  }
+  .add-headings,
+  .add-subject {
+    @apply grid;
+    @apply grid-cols-[15%_15%_1fr];
+    @apply w-full;
+    @apply my-1;
+    @apply text-sm;
+    @apply text-purple-100;
+  }
+  .add-btn-confirm,
+  .close-btn {
+    @apply bg-violet-50;
+    @apply rounded-full;
+    @apply cursor-pointer;
+  }
+  .close-btn {
+    @apply p-1;
+  }
+  .close-btn > h1 {
+    @apply text-sm;
+  }
+  .add-btn-confirm > h1,
+  .close-btn > h1 {
+    @apply text-indigo-500;
+  }
+  .lec-add-new-exam-modal.isHidden {
+    @apply scale-0;
+    @apply opacity-0;
+    @apply -mt-20;
+    @apply translate-x-20;
+  }
+  .add-subject.isSelected {
+    @apply bg-violet-200;
+    @apply rounded-xl;
+    @apply text-indigo-500;
+  }
+  .add-subject {
+    @apply cursor-pointer;
+    @apply duration-500;
+  }
+  .lec-exam-content-edit {
+    @apply mt-2;
+    @apply grid;
+    @apply grid-cols-[1fr_2%_1fr];
+    @apply p-8;
+    @apply gap-2;
+    @apply justify-center;
+    @apply overflow-hidden;
+    @apply w-[83.35vw];
+    @apply items-center;
+    @apply h-[91vh];
+  }
+  .lec-exam-content-list-heading,
+  .lec-exam-content-list-value {
+    @apply grid;
+    @apply grid-cols-[8%_1fr_repeat(4,8%)_5%_8%];
+    @apply grid-rows-[auto];
+    @apply break-words;
+    @apply items-center;
+    @apply text-xs;
+    @apply text-center;
+    @apply gap-2;
+    @apply p-2;
+  }
+  .lec-exam-content-list-value {
+    @apply border-b-2;
+    @apply border-pink-500;
+    @apply cursor-pointer;
+  }
+  .lec-exam-content-list-value:last-of-type {
+    @apply border-none;
+  }
+  .lec-exam-content-list-values {
+    @apply h-[calc(91.5vh-10rem)];
+    @apply overflow-y-scroll;
+    @apply border-pink-600;
+    @apply border-2;
+    @apply rounded-xl;
+    @apply mt-1;
+    @apply bg-pink-50;
+    @apply w-[38vw];
+    @apply text-indigo-900;
+  }
+  .lec-exam-content-list-heading {
+    @apply font-semibold;
+    @apply text-pink-600;
+    @apply p-2;
+  }
+  .lec-exam-content-list-heading > .icon {
+    @apply ml-2;
+  }
+  .lec-exam-content-list-value-singe:nth-of-type(2) {
+    @apply font-semibold;
+    @apply tracking-wider;
+  }
+  .lec-exam-content-list-value.isSelected {
+    @apply duration-500;
+    @apply bg-pink-300;
+    @apply text-purple-800;
+  }
+  .lec-exam-content-edit-btns {
+    @apply grid;
+    @apply grid-rows-2;
+    @apply justify-center;
+    @apply items-center;
+    @apply gap-8;
+    @apply mt-14;
+  }
+  .lec-exam-content-edit-btns > * > * {
+    @apply font-bold;
+    @apply text-2xl;
+    @apply text-pink-800;
+    @apply cursor-pointer;
+  }
+  .lec-exam-content-edit-btns > * > *:hover {
+    @apply duration-100;
+    @apply scale-125;
+  }
+  .lec-exam-content-list-title {
+    @apply text-center;
+    @apply font-semibold;
+    @apply text-pink-700;
+    @apply tracking-wider;
+    @apply mb-2;
+  }
+  .lec-exam-content-edit-search {
+    @apply w-full;
+    @apply bg-pink-500;
+    @apply rounded-2xl;
+    @apply overflow-hidden;
+    @apply grid;
+    @apply grid-cols-[1fr_5%];
+  }
+  .lec-exam-content-edit-search-input {
+    @apply pl-2;
+    @apply text-xs;
+    @apply font-mono;
+    @apply h-[5vh];
+  }
+  .lec-exam-content-edit-search-sub {
+    @apply ml-0.5;
+    @apply font-bold;
+    @apply text-pink-50;
+  }
+}
